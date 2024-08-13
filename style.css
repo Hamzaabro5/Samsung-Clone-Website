@@ -33,3 +33,6 @@
     box-shadow: 3px 5px 5px rgba(1, 1, 1, 0.3);
     transition: 0.2s ease-in-out;
 }
+.mx-more{
+    margin: 0 230px;
+}
