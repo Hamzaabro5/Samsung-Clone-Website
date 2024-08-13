@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#Latestoffer{
+    margin-left: 250px;
+    gap: 100px;
+}
+.left-nav li{
+    padding: 8px;
+}
+.right-nav li{
+    padding: 8px;
+}
+.hovergrey:hover{
+    color: #5f5f5f;
+    cursor: pointer;
+}
+.btnhovergrey{
+    background-color: #000;
+    cursor: pointer;
+}
+.btnhovergrey:hover{
+    background-color: #5f5f5f;
+    cursor: pointer;
+}
+.cardhover{
+    transition: 0.2s ease-in-out;
+}
+.cardhover:hover{
+    transform: scale(1.04);
+    box-shadow: 3px 5px 5px rgba(1, 1, 1, 0.3);
+    transition: 0.2s ease-in-out;
+}
