@@ -82,11 +82,14 @@
 .modaaal{
     position: fixed;
     right: -25px;
-    bottom: 25%;
+    bottom: 35%;
     rotate: 270deg;
 }
-
-
+.cartpayment{
+    position: absolute;
+    left: 240px;
+    bottom: 15%;
+}
 
 
 
