@@ -36,3 +36,73 @@
 .mx-more{
     margin: 0 230px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.socialContainer {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: .3s;
+}
+.containerFour{
+    position: fixed;
+    right: 10px;
+    bottom: 4%;
+}
+.containerFour:hover {
+   background-color: #128C7E;
+    transition-duration: .3s;
+}
+.socialSvg {
+    width: 24px;
+}
+.socialSvg path {
+    fill: rgb(255, 255, 255);
+}
+  
+.socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.3s both;
+}
+  
+.modaaal{
+    position: fixed;
+    right: -25px;
+    bottom: 25%;
+    rotate: 270deg;
+}
+
+
+
+
+
+
+
+
+
+@keyframes slide-in-top {
+0% {
+  transform: translateY(-50px);
+  opacity: 0;
+}
+ 100% {
+  transform: translateY(0);
+  opacity: 1;
+}
+}
+  
+  
