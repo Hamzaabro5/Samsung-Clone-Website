@@ -13,12 +13,13 @@
        card.innerHTML = `
        <img src="${product.imageSrc}"  class="card-img-top w-100" alt="...">
        <div class="card-body">
-           <h5 class="card-title">${product.brand}</h5>
-           <p class="card-text">Color: ${product.color}</p>
-           <p class="card-text">Memory: ${product.memory}</p>
-           <p class="card-text">Price: ${product.price}</p>
-         </div>
-         <button class="btn btn-md btn-danger" onclick="removeProduct(${product.id})">Remove</button>
+           <h4 class="card-title text-center fw-bold">${product.brand}</h4>
+           <p class="card-text text-center"><span class="fw-bold">Memory:</span> ${product.memory}</p>
+           <p class="card-text text-center"><span class="fw-bold">Price:</span> ${product.price}</p>
+           </div>
+           <div class="d-flex justify-content-center my-3">
+           <button class="btn btn-md btn-danger" onclick="removeProduct(${product.id})">Remove</button>
+           </div>
        `;
        cartItems.appendChild(card);
      });
