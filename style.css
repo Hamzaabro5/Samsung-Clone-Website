@@ -86,9 +86,8 @@
     rotate: 270deg;
 }
 .cartpayment{
-    position: absolute;
-    left: 240px;
-    bottom: 15%;
+    margin-top: 80px;
+    margin-left: 200px;
 }
 
 

@@ -1,7 +1,6 @@
-   // cart prod local storage me jayeingi
+
    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  
-   // item display karane kelie
+
    function displayCart() {
      const   
   cartItems = document.getElementById('cart-items');
@@ -24,14 +23,14 @@
        cartItems.appendChild(card);
      });
    }
- 
-   // item remove krne kelie
-   function removeProduct(id) {
-     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-     const updatedCart = cart.filter(product => product.id !== id);
-     localStorage.setItem('cart', JSON.stringify(updatedCart));
+   
+   function removeProduct(product) {
+    //  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    //  const updatedCart = cart.filter(product => product.id !== id);
+    //  localStorage.setItem('cart', JSON.stringify(updatedCart));
+    cart.splice(product , 1)
      displayCart();
-     window.location.reload();
+    //  window.location.reload();
    }
  
    displayCart();

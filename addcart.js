@@ -1,5 +1,6 @@
+const textarea = document.querySelector(`textarea`)
 function addtoCart() {
-  // product details post kelie
+  
   const card = event.target.closest('.card');
   const brand = card.querySelector('.brand').textContent;
   const color = card.querySelector('.card-text span').textContent.split(':')[1].trim();
@@ -7,7 +8,6 @@ function addtoCart() {
   const price = card.querySelector('.price').textContent;
   const imageSrc = card.querySelector('img').src;
 
-  // Create product object
   const product = {
     brand,
     color,
@@ -16,12 +16,19 @@ function addtoCart() {
     imageSrc
   };
 
-  // cart me add krene kelie
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
   cart.push(product);
   localStorage.setItem('cart', JSON.stringify(cart));
   alert(`Item Added`)
 
-  // direct cart wala page khulega
   // window.location.href = 'cart.html';
+}
+
+
+
+function modalSubmit() {
+  window.location.reload
+  alert(`FeedBack Submitted`);
+  console.log(textarea.value);
+  textarea.value = ``
 }
