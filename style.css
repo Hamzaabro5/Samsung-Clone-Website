@@ -6,6 +6,11 @@
 body {
     font-size: 16px;
 }  
+img{
+    max-width: 100%;
+    height: auto;
+}
+
 #Latestoffer{
     margin-left: 250px;
     gap: 100px;
@@ -39,16 +44,6 @@ body {
 .mx-more{
     margin: 0 230px;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -105,32 +100,13 @@ body {
 
 
 
-img{
-    max-width: 100%;
-    height: auto;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     body {
       font-size: 14px;
+    }
+    img{
+        width: 70%;
+        height: auto;
     }
   }
 
