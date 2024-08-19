@@ -16,9 +16,9 @@ function addtoCart() {
     imageSrc
   };
 
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let cart = JSON.parse(localStorage.getItem('carts')) || [];
   cart.push(product);
-  localStorage.setItem('cart', JSON.stringify(cart));
+  localStorage.setItem('carts', JSON.stringify(cart));
   alert(`Item Added`)
 
   // window.location.href = 'cart.html';
@@ -32,3 +32,11 @@ function modalSubmit() {
   console.log(textarea.value);
   textarea.value = ``
 }
+
+
+
+
+
+
+
+

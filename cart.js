@@ -1,5 +1,5 @@
 
-   const cart = JSON.parse(localStorage.getItem('cart')) || [];
+   const cart = JSON.parse(localStorage.getItem('carts')) || [];
 
    function displayCart() {
      const   
@@ -25,12 +25,17 @@
    }
    
    function removeProduct(product) {
-    //  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    //  const cart = JSON.parse(localStorage.getItem('carts')) || [];
     //  const updatedCart = cart.filter(product => product.id !== id);
-    //  localStorage.setItem('cart', JSON.stringify(updatedCart));
+    //  localStorage.setItem('carts', JSON.stringify(updatedCart));
+
     cart.splice(product , 1)
      displayCart();
     //  window.location.reload();
    }
  
    displayCart();
+
+
+
+
