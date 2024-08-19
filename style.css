@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    font-size: 16px;
+}  
 #Latestoffer{
     margin-left: 250px;
     gap: 100px;
@@ -36,6 +39,8 @@
 .mx-more{
     margin: 0 230px;
 }
+
+
 
 
 
@@ -90,6 +95,44 @@
     margin-left: 200px;
 }
 
+
+
+
+
+
+
+
+
+
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+    body {
+      font-size: 14px;
+    }
+  }
 
 
 @keyframes slide-in-top {
