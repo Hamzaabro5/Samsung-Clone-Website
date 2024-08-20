@@ -1,10 +1,13 @@
 
-   const cart = JSON.parse(localStorage.getItem('carts')) || [];
+const cart = JSON.parse(localStorage.getItem('carts')) || [];
+const cartItems = document.querySelector(`#cart-items`)
+  
 
-   const cartItems = document.querySelector(`#cart-items`)
-   function displayCart() {
+
+
+function displayCart() {
      const   
-  cartItems = document.getElementById('cart-items');
+     cartItems = document.getElementById('cart-items');
      cartItems.innerHTML = '';
 
      if(cart != null && cart.length > 0){
@@ -17,6 +20,7 @@
             <h4 class="card-title text-center fw-bold">${product.brand}</h4>
             <p class="card-text text-center"><span class="fw-bold">Memory:</span> ${product.memory}</p>
             <p class="card-text text-center"><span class="fw-bold">Price:</span> ${product.price}</p>
+            <h6 class="card-text text-center"><b>Quantity :</b> <button onclick="increaseItem(${product.id})" class="text-white bg-success border-0 rounded-5 py-1 px-2">+</button> ${product.quantity} <button onclick="decreaseItem(${product.id})" class="text-white bg-danger border-0 rounded-5 py-1 px-2">-</button></h6>
             </div>
             <div class="d-flex justify-content-center my-3">
             <button class="btn btn-md btn-danger" onclick="removeProduct(${product.id})">Remove</button>
@@ -31,18 +35,20 @@
   }
 
  
-   }
+}
    
-   function removeProduct(product) {
+
+
+
+function removeProduct(product) {
 
     cart.splice(product , 1)
     localStorage.setItem('carts', JSON.stringify(cart))
      displayCart();
     //  window.location.reload();
-   }
+}
  
-   displayCart();
-
+displayCart();
 
 
 
