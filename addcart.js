@@ -1,4 +1,5 @@
 const textarea = document.querySelector(`textarea`)
+const imgchange = document.querySelector(`.imgchangeindexmobile`)
 function addtoCart() {
   
   const card = event.target.closest('.card');
@@ -32,11 +33,4 @@ function modalSubmit() {
   console.log(textarea.value);
   textarea.value = ``
 }
-
-
-
-
-
-
-
 

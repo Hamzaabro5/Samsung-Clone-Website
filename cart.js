@@ -49,6 +49,3 @@ function removeProduct(product) {
 }
  
 displayCart();
-
-
-
