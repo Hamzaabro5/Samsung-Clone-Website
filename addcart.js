@@ -22,7 +22,7 @@ function addtoCart() {
   localStorage.setItem('carts', JSON.stringify(cart));
   alert(`Item Added`)
 
-  window.location.href = 'cart.html';
+  window.location.href = '../cart.html';
 }
 
 
@@ -33,4 +33,13 @@ function modalSubmit() {
   console.log(textarea.value);
   textarea.value = ``
 }
+
+
+
+
+
+
+
+
+
 
