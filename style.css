@@ -196,8 +196,14 @@ img{
 .bg-darkblue{
     background-color: #080b1a;
 }
-
-
+.big30text{
+    font-size: 184px;
+    transition: 0.3s ease-in-out;
+}
+.big30text:hover{
+    color: #73528f;
+    transition: 0.3s ease-in-out;
+}
 
 
 
