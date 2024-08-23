@@ -45,8 +45,6 @@ img{
 }
 
 
-
-
 .socialContainer {
     width: 60px;
     height: 60px;
@@ -91,7 +89,6 @@ img{
 
 
 
-
 /* .hoverbtn{
     visibility: hidden;
     transition: 0.5s ease-out;
@@ -101,16 +98,6 @@ img{
     transition: 0.5s ease-out;
 }
  */
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -166,9 +153,6 @@ img{
     height: 100%;
   }
 
-
-
-
 .bg-gradient{
     height: 300px;
 }
@@ -204,6 +188,57 @@ img{
     color: #73528f;
     transition: 0.3s ease-in-out;
 }
+.Watch5probannerheading{
+    margin-left: 800px;
+    font-size: 72px;
+}
+.watch5proheadingBanner{
+    background-image:url(https://images.samsung.com/pk/galaxy-watch5-pro/feature/galaxy-watch5-overview-bg.jpg);
+    padding: 290px;
+}
+.watch5proheadingBanner h1{
+    font-size: 68px;
+    color: #ffffff6c;
+    margin: 80px 0px;
+    transition: 0.3s ease-in-out;
+}
+.watch5proheadingBanner h1:hover{
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+.gpsroutingtext{
+    font-size: 94px;
+    margin-right: 420px;
+}
+.gainsaddupimg{
+    margin-left: 900px;
+    margin-top: 500px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
