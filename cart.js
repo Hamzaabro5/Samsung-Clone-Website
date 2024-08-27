@@ -75,18 +75,18 @@
 
 
 const cartItemsList = document.getElementById('cart-items');
-
 const cart = JSON.parse(localStorage.getItem('carts')) || [];
-function displayCartItems() {
 
-  if (cart.length === 0) {
+function displayCartItems() {
+  
+  if (!cart || !cart.length) {
     cartItemsList.innerHTML = '<h3 class="empty-cart mt-3">No Item Found.....</h3>';
   } else {
     cartItemsList.innerHTML = ''; 
 
     cart.forEach(item => {
       const listItem = document.createElement('li');
-      listItem.innerHTML = `
+      listItem.innerHTML += `
         <img width="200px" src="${item.imageSrc}" alt="${item.brand} ${item.color}">
         <div class="card border-0 text-center">
           <h3 class="my-3">${item.brand}</h3>

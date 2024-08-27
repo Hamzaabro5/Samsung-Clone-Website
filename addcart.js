@@ -97,7 +97,6 @@ function addtoCart() {
 }
 
 function updateCartDisplay() {
-
 }
 
 function modalSubmit() {
