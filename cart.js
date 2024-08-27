@@ -18,9 +18,9 @@
 //           <span class="my-2"><b>Price:</b> ${item.price}</span>
 //           <div class="quantity-container d-flex justify-content-center align-items-center">
 //           <b>Quantity:</b> 
-//             <button class="btn btn-sm btn-outline-primary rounded-circle mx-2" data-brand="${item.brand}" data-color="${item.color}" data-memory="${item.memory}" onclick="decreaseQuantity(this)">-</button>
+//             <button class="btn btn-sm btn-danger rounded-circle mx-2" data-brand="${item.brand}" data-color="${item.color}" data-memory="${item.memory}" onclick="decreaseQuantity(this)">-</button>
 //             <span class="quantity mx-2">${item.quantity}</span>
-//             <button class="btn btn-sm btn-outline-primary rounded-circle mx-2" data-brand="${item.brand}" data-color="${item.color}" data-memory="${item.memory}" onclick="increaseQuantity(this)">+</button>
+//             <button class="btn btn-sm btn-success rounded-circle mx-2" data-brand="${item.brand}" data-color="${item.color}" data-memory="${item.memory}" onclick="increaseQuantity(this)">+</button>
 //           </div>
 
 //           <button class="btn btn-danger delete-btn rounded-5 m-3" data-brand="${item.brand}" data-color="${item.color}" data-memory="${item.memory}">Remove Item</button>
@@ -91,6 +91,12 @@
 // }
 
 // displayCartItems();
+
+
+
+
+
+
 
 
 
