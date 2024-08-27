@@ -1,50 +1,33 @@
 
-const cart = JSON.parse(localStorage.getItem('carts')) || [];
-const cartItems = document.querySelector(`#cart-items`)
+
+const cartItemsList = document.getElementById('cart-items');
+
+  function displayCartItems() {
+    const cart = JSON.parse(localStorage.getItem('carts')) || [];
+
+    cartItemsList.innerHTML = '';
+
+      cart.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+                <img src="${item.imageSrc}" alt="${item.brand} ${item.color}">
+                <div class="card p-2">
+                 <span>Brand: ${item.brand}</span>
+                 <span>Color: ${item.color}</span>
+                 <span>Memory: ${item.memory}</span>
+                 <span>Price: ${item.price}</span>
+                 <span>Quantity: ${item.quantity}</span>
+                 <button class="btn btn-danger m-3" data-brand="${item.brand}" data-color="${item.color}" data-memory="${item.memory}">Remove</button>
+                  </div>
+                `;
+                cartItemsList.appendChild(listItem);
+            });
+      }
+
+displayCartItems();
 
 
 
-function displayCart() {
-     const   
-     cartItems = document.getElementById('cart-items');
-     cartItems.innerHTML = '';
-
-     if(cart != null && cart.length > 0){
-       cart.forEach(product => {
-        const card = document.createElement('div');
-        card.classList.add('card');
-        card.innerHTML += `
-        <img src="${product.imageSrc}"  class="card-img-top w-100" alt="...">
-        <div class="card-body">
-            <h4 class="card-title text-center fw-bold">${product.brand}</h4>
-            <p class="card-text text-center"><span class="fw-bold">Memory:</span> ${product.memory}</p>
-            <p class="card-text text-center"><span class="fw-bold">Price:</span> ${product.price}</p>
-            </div>
-            <div class="d-flex justify-content-center my-3">
-            <button class="btn btn-md btn-danger" onclick="removeProduct(${product.id})">Remove</button>
-            </div>
-        `;
-        cartItems.appendChild(card);
-      });
-     }else{
-      cartItems.innerHTML = `
-      <h3 class="text-center">No Item Found...</h3>
-      `
-  }
-
- 
-}
-
-
-function removeProduct(product) {
-  
-  cart.splice(product , 1)
-  localStorage.setItem('carts', JSON.stringify(cart))
-  displayCart();
-  //  window.location.reload();
-}
-
-displayCart();
 
 
 
