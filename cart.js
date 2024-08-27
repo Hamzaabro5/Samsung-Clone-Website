@@ -9,14 +9,13 @@ function displayCartItems() {
     const listItem = document.createElement('li');
     listItem.innerHTML = `
       <img src="${item.imageSrc}" alt="${item.brand} ${item.color}">
-      <div class="card">
-        <span>Brand: ${item.brand}</span>
-        <span>Color: ${item.color}</span>
-        <span>Memory: ${item.memory}</span>
-        <span>Price: ${item.price}</span>
-        <span>Quantity: ${item.quantity}</span>
-        <button data-brand="${item.brand}" data-color="${item.color}" data-memory="${item.memory}">Remove</button>
-      </div>
+      <div class="card border-0 text-center">
+        <h3 class="my-3">${item.brand}</h3>
+        <span><b>Memory:</b> ${item.memory}</span>
+        <span class="my-2"><b>Price:</b> ${item.price}</span>
+        <span><b>Quantity:</b> ${item.quantity}</span>
+        <button class="btn btn-danger rounded-5 m-3" data-brand="${item.brand}" data-color="${item.color}" data-memory="${item.memory}">Remove</button>
+        </div>
     `;
 
 
