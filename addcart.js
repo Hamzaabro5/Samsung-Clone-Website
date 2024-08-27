@@ -80,43 +80,32 @@ function addtoCart() {
     memory,
     price,
     imageSrc,
-    quantity: 1 // Initialize quantity for new products
+    quantity: 1 
   };
 
-  // Check if cart exists in localStorage
   let cart = JSON.parse(localStorage.getItem('carts')) || [];
-
-  // Find existing product in the cart
   const existingProductIndex = cart.findIndex(item => item.brand === product.brand && item.color === product.color && item.memory === product.memory);
 
   if (existingProductIndex !== -1) {
-    // Product already exists, increase quantity
     cart[existingProductIndex].quantity++;
   } else {
-    // New product, add it with initial quantity 1
     cart.push(product);
   }
 
-  // Update localStorage with the modified cart
   localStorage.setItem('carts', JSON.stringify(cart));
   alert(`Item Added (Quantity: ${cart[existingProductIndex] ? cart[existingProductIndex].quantity : 1})`);
-
-  // Optional: Update cart display on current page (consider using a separate function)
-  // updateCartDisplay();
 }
 
 function updateCartDisplay() {
-  // Logic to fetch cart items from localStorage and update the cart UI
-  // (e.g., using a templating engine or DOM manipulation)
+
 }
 
 function modalSubmit() {
-  window.location.reload(); // Reload the page to potentially update cart display
+  window.location.reload();
   alert(`Feedback Submitted`);
   console.log(textarea.value);
-  textarea.value = ''; // Clear textarea after submitting feedback
+  textarea.value = '';
 }
 
-// Add event listeners (assuming you have buttons with appropriate classes)
 const addToCartButtons = document.querySelectorAll('.add-to-cart');
 addToCartButtons.forEach(button => button.addEventListener('click', addtoCart));
