@@ -83,7 +83,8 @@ function addtoCart() {
     quantity: 1 
   };
 
-  let cart = JSON.parse(localStorage.getItem('carts')) || [];
+  let cart = []
+  cart = JSON.parse(localStorage.getItem('carts')) || [];
   const existingProductIndex = cart.findIndex(item => item.brand === product.brand && item.color === product.color && item.memory === product.memory);
 
   if (existingProductIndex !== -1) {
