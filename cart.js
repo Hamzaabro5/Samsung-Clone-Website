@@ -109,11 +109,10 @@ const cartItemsList = document.getElementById('cart-items');
 const cart = JSON.parse(localStorage.getItem('carts')) || [];
 
 function displayCartItems() {
-  
   if (!cart || !cart.length) {
     cartItemsList.innerHTML = '<h3 class="empty-cart mt-3">No Item Found.....</h3>';
   } else {
-    cartItemsList.innerHTML = ''; 
+    cartItemsList.innerHTML = '';
 
     cart.forEach(item => {
       const listItem = document.createElement('li');
@@ -122,19 +121,18 @@ function displayCartItems() {
         <div class="card border-0 text-center">
           <h3 class="my-3">${item.brand}</h3>
           <span><b>Memory:</b> ${item.memory}</span>
-          <span class="my-2"><b>Price:</b>${item.price}</span>
+          <span class="my-2"><b>Price:</b> <span id="price-${item.brand}-${item.color}-${item.memory}"><b>Rs.</b> ${item.price * item.quantity}</span></span>
           <div class="quantity-container d-flex justify-content-center align-items-center">
-          <b>Quantity:</b> 
+            <b>Quantity:</b> 
             <button class="btn btn-sm btn-danger rounded-circle mx-2" data-brand="${item.brand}" data-color="${item.color}" data-memory="${item.memory}" onclick="decreaseQuantity(this)">-</button>
             <span class="quantity mx-2">${item.quantity}</span>
             <button class="btn btn-sm btn-success rounded-circle mx-2" data-brand="${item.brand}" data-color="${item.color}" data-memory="${item.memory}" onclick="increaseQuantity(this)">+</button>
           </div>
-
           <button class="btn btn-danger delete-btn rounded-5 m-3" data-brand="${item.brand}" data-color="${item.color}" data-memory="${item.memory}">Remove Item</button>
         </div>
       `;
       
-    const removeButton = listItem.querySelector('.delete-btn');
+      const removeButton = listItem.querySelector('.delete-btn');
       removeButton.addEventListener('click', event => {
         const brand = event.target.dataset.brand;
         const color = event.target.dataset.color;
@@ -144,8 +142,7 @@ function displayCartItems() {
         cart.splice(existingProductIndex, 1);
         localStorage.setItem('carts', JSON.stringify(cart));
         displayCartItems();
-
-          });
+      });
 
       cartItemsList.appendChild(listItem);
     });
@@ -165,7 +162,11 @@ function decreaseQuantity(buttonElement) {
     if (currentQuantity > 1) {
       cart[existingProductIndex].quantity--;
       const quantitySpan = buttonElement.parentElement.querySelector('.quantity');
-      quantitySpan.textContent = currentQuantity - 1;
+      quantitySpan.textContent = cart[existingProductIndex].quantity;
+
+      // Update the total price display
+      updateTotalPrice(existingProductIndex);
+
       localStorage.setItem('carts', JSON.stringify(cart));
     } else {
       cart.splice(existingProductIndex, 1);
@@ -186,11 +187,22 @@ function increaseQuantity(buttonElement) {
     cart[existingProductIndex].quantity++;
     const quantitySpan = buttonElement.parentElement.querySelector('.quantity');
     quantitySpan.textContent = cart[existingProductIndex].quantity;
+
+    // Update the total price display
+    updateTotalPrice(existingProductIndex);
+
     localStorage.setItem('carts', JSON.stringify(cart));
   }
 }
 
+function updateTotalPrice(index) {
+  const item = cart[index];
+  const totalPriceElement = document.getElementById(`price-${item.brand}-${item.color}-${item.memory}`);
+  totalPriceElement.textContent = item.price * item.quantity;
+}
+
 displayCartItems();
+
 
 
 

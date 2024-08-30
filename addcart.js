@@ -63,15 +63,16 @@
 
 
 
-const textarea = document.querySelector(`textarea`);
-const imgchange = document.querySelector(`.imgchangeindexmobile`);
-
 function addtoCart() {
   const card = event.target.closest('.card');
   const brand = card.querySelector('.brand').textContent;
   const color = card.querySelector('.card-text span').textContent.split(':')[1].trim();
   const memory = card.querySelector('.memory').textContent;
-  const price = card.querySelector('.price').textContent;
+  const priceString = card.querySelector('.price').textContent;
+  
+  // Convert the price string to a number (assuming it's a float)
+  const price = parseFloat(priceString.replace(/[^0-9.-]+/g,""));
+
   const imageSrc = card.querySelector('img').src;
 
   const product = {
