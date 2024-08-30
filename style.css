@@ -201,6 +201,9 @@ img{
 .borntoperformance h1{
     font-size: 84px;
 }
+.responsive-navbar{
+    display: none;
+}
 
 
 
@@ -227,10 +230,12 @@ img{
 
 
 
-
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
     body {
       font-size: 14px;
+    }
+    .responsive-navbar{
+        display: block;
     }
   }
 
